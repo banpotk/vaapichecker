@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle"><string notr="true">VAAPI Checker</string></property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="mainLayout" stretch="0,0,0,1,0">
+    <property name="spacing"><number>10</number></property>
+    <property name="leftMargin"><number>18</number></property>
+    <property name="topMargin"><number>14</number></property>
+    <property name="rightMargin"><number>18</number></property>
+    <property name="bottomMargin"><number>12</number></property>
+    <item>
+     <layout class="QHBoxLayout" name="headerLayout" stretch="1,0,0,0,0,0">
+      <item>
+       <widget class="QLabel" name="subtitle">
+        <property name="text"><string notr="true">Video acceleration capabilities &amp; diagnostics for Linux</string></property>
+        <property name="wordWrap"><bool>true</bool></property>
+        <property name="textFormat"><enum>Qt::PlainText</enum></property>
+        <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="rescanButton">
+        <property name="text"><string notr="true">Rescan</string></property>
+        <property name="shortcut"><string notr="true">F5</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="exportButton">
+        <property name="enabled"><bool>false</bool></property>
+        <property name="text"><string notr="true">Export report</string></property>
+        <widget class="QMenu" name="exportMenu">
+         <addaction name="actionSaveJson"/>
+         <addaction name="actionSaveText"/>
+         <addaction name="actionCopyReport"/>
+        </widget>
+        <action name="actionSaveJson">
+         <property name="text"><string notr="true">Save JSON…</string></property>
+        </action>
+        <action name="actionSaveText">
+         <property name="text"><string notr="true">Save text…</string></property>
+        </action>
+        <action name="actionCopyReport">
+         <property name="text"><string notr="true">Copy report</string></property>
+        </action>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="aboutButton">
+        <property name="text"><string notr="true">About</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="themeLabel">
+        <property name="text"><string notr="true">Theme</string></property>
+        <property name="buddy" stdset="0"><cstring>themeSelector</cstring></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="themeSelector">
+        <property name="accessibleName"><string notr="true">Theme</string></property>
+        <property name="toolTip"><string notr="true">Choose a color theme. System follows the desktop appearance.</string></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="statsLayout" stretch="1,1,1,1">
+      <item>
+       <widget class="QGroupBox" name="decodeStatFrame">
+        <property name="title"><string notr="true">Decode entrypoints</string></property>
+        <layout class="QVBoxLayout" name="decodeStatLayout">
+         <item>
+          <widget class="QLabel" name="decoderStat">
+           <property name="text"><string notr="true">—</string></property>
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="wordWrap"><bool>true</bool></property>
+           <property name="textFormat"><enum>Qt::PlainText</enum></property>
+           <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="encodeStatFrame">
+        <property name="title"><string notr="true">Encode entrypoints</string></property>
+        <layout class="QVBoxLayout" name="encodeStatLayout">
+         <item>
+          <widget class="QLabel" name="encoderStat">
+           <property name="text"><string notr="true">—</string></property>
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="wordWrap"><bool>true</bool></property>
+           <property name="textFormat"><enum>Qt::PlainText</enum></property>
+           <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="processorStatFrame">
+        <property name="title"><string notr="true">Processing filters</string></property>
+        <layout class="QVBoxLayout" name="processorStatLayout">
+         <item>
+          <widget class="QLabel" name="processorStat">
+           <property name="text"><string notr="true">—</string></property>
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="wordWrap"><bool>true</bool></property>
+           <property name="textFormat"><enum>Qt::PlainText</enum></property>
+           <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="apiStatFrame">
+        <property name="title"><string notr="true">VA-API version</string></property>
+        <layout class="QVBoxLayout" name="apiStatLayout">
+         <item>
+          <widget class="QLabel" name="apiStat">
+           <property name="text"><string notr="true">—</string></property>
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="wordWrap"><bool>true</bool></property>
+           <property name="textFormat"><enum>Qt::PlainText</enum></property>
+           <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="driverInfo">
+      <property name="text"><string notr="true">Discovering DRM render nodes…</string></property>
+      <property name="wordWrap"><bool>true</bool></property>
+      <property name="textFormat"><enum>Qt::PlainText</enum></property>
+      <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="mainTabs"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="bottomLayout" stretch="0,2,0,2,0">
+      <item>
+       <widget class="QLabel" name="gpuLabel">
+        <property name="text"><string notr="true">GPU:</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="deviceCombo">
+        <property name="minimumWidth"><number>320</number></property>
+        <property name="sizeAdjustPolicy"><enum>QComboBox::AdjustToMinimumContentsLengthWithIcon</enum></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="chooseNodeButton">
+        <property name="text"><string notr="true">Choose node…</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="deviceStatus">
+        <property name="text"><string notr="true">Starting…</string></property>
+        <property name="wordWrap"><bool>true</bool></property>
+        <property name="textFormat"><enum>Qt::PlainText</enum></property>
+        <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="closeButton">
+        <property name="text"><string notr="true">Close</string></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar">
+   <property name="sizeGripEnabled"><bool>true</bool></property>
+  </widget>
+ </widget>
+</ui>

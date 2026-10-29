@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CapabilityTab</class>
+ <widget class="QWidget" name="capabilityPage">
+  <layout class="QVBoxLayout" name="capabilityLayout" stretch="0,1,0">
+   <item>
+    <layout class="QHBoxLayout" name="capabilityTools" stretch="0,1,0">
+     <item>
+      <widget class="QComboBox" name="operationFilter"/>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="capabilitySearch">
+       <property name="placeholderText"><string notr="true">Filter profiles, formats or resolutions…</string></property>
+       <property name="clearButtonEnabled"><bool>true</bool></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="copyTableButton">
+       <property name="text"><string notr="true">Copy table</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QSplitter" name="capabilitySplitter">
+     <property name="orientation"><enum>Qt::Vertical</enum></property>
+     <widget class="QTableView" name="capabilityTable">
+      <property name="alternatingRowColors"><bool>true</bool></property>
+      <property name="showGrid"><bool>false</bool></property>
+      <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+      <property name="selectionMode"><enum>QAbstractItemView::SingleSelection</enum></property>
+      <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+     </widget>
+     <widget class="QTreeWidget" name="capabilityDetails">
+      <property name="alternatingRowColors"><bool>true</bool></property>
+      <property name="rootIsDecorated"><bool>false</bool></property>
+      <property name="indentation"><number>14</number></property>
+      <property name="columnCount"><number>2</number></property>
+      <property name="headerLabels">
+       <stringlist notr="true">
+        <string notr="true">Property</string>
+        <string notr="true">Value</string>
+       </stringlist>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="capabilityStatus">
+     <property name="text"><string notr="true">Scanning…</string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="textFormat"><enum>Qt::PlainText</enum></property>
+     <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

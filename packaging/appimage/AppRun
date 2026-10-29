@@ -1,0 +1,9 @@
+#!/bin/sh
+set -eu
+
+# Relative ELF RPATHs are set by linuxdeploy. Do not change LD_LIBRARY_PATH
+# or PATH: libva drivers and the user's FFmpeg must load their host libraries.
+appdir=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+export QT_PLUGIN_PATH="$appdir/usr/plugins"
+export QT_QPA_PLATFORM_PLUGIN_PATH="$appdir/usr/plugins/platforms"
+exec "$appdir/usr/bin/vaapi-checker" "$@"

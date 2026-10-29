@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MediaTab</class>
+ <widget class="QWidget" name="mediaPage">
+  <layout class="QVBoxLayout" name="mediaLayout" stretch="0,0,1,0">
+   <item>
+    <layout class="QHBoxLayout" name="mediaTools" stretch="0,1,0">
+     <item>
+      <widget class="QComboBox" name="codecFilter"/>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="codecSearch">
+       <property name="placeholderText"><string notr="true">Search installed media components…</string></property>
+       <property name="clearButtonEnabled"><bool>true</bool></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="checkMediaButton">
+       <property name="text"><string notr="true">Check components</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="mediaStatus">
+     <property name="text"><string notr="true">Checking FFmpeg…</string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="textFormat"><enum>Qt::PlainText</enum></property>
+     <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSplitter" name="mediaSplitter">
+     <property name="orientation"><enum>Qt::Horizontal</enum></property>
+     <widget class="QTableView" name="codecTable">
+      <property name="alternatingRowColors"><bool>true</bool></property>
+      <property name="showGrid"><bool>false</bool></property>
+      <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+      <property name="selectionMode"><enum>QAbstractItemView::SingleSelection</enum></property>
+      <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+     </widget>
+     <widget class="QPlainTextEdit" name="codecDetails">
+      <property name="readOnly"><bool>true</bool></property>
+      <property name="placeholderText"><string notr="true">Select a component to query its supported hardware devices and options.</string></property>
+      <property name="plainText">
+       <string notr="true">Select a component to query its supported hardware devices and options.
+
+Installed components are FFmpeg build features. Actual VAAPI support depends on the selected GPU, codec profile and media file.</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="testGroup">
+     <property name="title"><string notr="true">Test a local video with VAAPI</string></property>
+     <layout class="QVBoxLayout" name="testLayout">
+      <item>
+       <layout class="QHBoxLayout" name="fileLayout" stretch="1,0,0">
+        <item>
+         <widget class="QLineEdit" name="videoPath">
+          <property name="readOnly"><bool>true</bool></property>
+          <property name="placeholderText"><string notr="true">Choose a video file…</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="openVideoButton">
+          <property name="text"><string notr="true">Open video…</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="inspectVideoButton">
+          <property name="text"><string notr="true">Inspect</string></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="videoInfo">
+        <property name="text"><string notr="true">The test decodes the first video stream through a VAAPI filter and discards output frames.</string></property>
+        <property name="wordWrap"><bool>true</bool></property>
+        <property name="textFormat"><enum>Qt::PlainText</enum></property>
+        <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="testRow">
+        <item>
+         <widget class="QLabel" name="testLengthLabel">
+          <property name="text"><string notr="true">Test length:</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="testSeconds">
+          <property name="minimum"><number>1</number></property>
+          <property name="maximum"><number>600</number></property>
+          <property name="value"><number>30</number></property>
+          <property name="suffix"><string notr="true"> s</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="captureTrace">
+          <property name="text"><string notr="true">Capture libva trace</string></property>
+          <property name="checked"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="testRowSpacer">
+          <property name="orientation"><enum>Qt::Horizontal</enum></property>
+          <property name="sizeType"><enum>QSizePolicy::Expanding</enum></property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="runTestButton">
+          <property name="text"><string notr="true">Run VAAPI test</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="stopTestButton">
+          <property name="text"><string notr="true">Stop</string></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="testStatus">
+        <property name="text"><string notr="true">Ready · choose a video to inspect or test.</string></property>
+        <property name="wordWrap"><bool>true</bool></property>
+        <property name="textFormat"><enum>Qt::PlainText</enum></property>
+        <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

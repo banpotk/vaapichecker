@@ -1,0 +1,6 @@
+/build*/
+/artifacts/
+/dist/
+*.user
+AGENTS.md
+VALIDATION.md

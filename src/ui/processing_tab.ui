@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProcessingTab</class>
+ <widget class="QWidget" name="processingPage">
+  <layout class="QVBoxLayout" name="processingLayout" stretch="0,1,0,0">
+   <item>
+    <widget class="QLabel" name="processingDescription">
+     <property name="text"><string notr="true">Video processing pipeline and filters reported by the selected VAAPI driver</string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="textFormat"><enum>Qt::PlainText</enum></property>
+     <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSplitter" name="processorSplitter">
+     <property name="orientation"><enum>Qt::Horizontal</enum></property>
+     <widget class="QTreeWidget" name="processorTree">
+      <property name="rootIsDecorated"><bool>false</bool></property>
+      <property name="columnCount"><number>1</number></property>
+      <property name="headerLabels">
+       <stringlist notr="true">
+        <string notr="true">Processor capability</string>
+       </stringlist>
+      </property>
+     </widget>
+     <widget class="QTreeWidget" name="processorDetails">
+      <property name="alternatingRowColors"><bool>true</bool></property>
+      <property name="rootIsDecorated"><bool>false</bool></property>
+      <property name="indentation"><number>14</number></property>
+      <property name="columnCount"><number>2</number></property>
+      <property name="headerLabels">
+       <stringlist notr="true">
+        <string notr="true">Property</string>
+        <string notr="true">Value</string>
+       </stringlist>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="imageFormats">
+     <property name="text"><string notr="true">Image formats: —</string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="textFormat"><enum>Qt::PlainText</enum></property>
+     <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="processorStatus">
+     <property name="text"><string notr="true">Scanning…</string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="textFormat"><enum>Qt::PlainText</enum></property>
+     <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>

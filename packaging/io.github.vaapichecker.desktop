@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=VAAPI Checker
+Comment=Inspect Linux hardware video acceleration capabilities
+Exec=vaapi-checker
+Icon=vaapi-checker
+Terminal=false
+Categories=System;Utility;
+Keywords=VAAPI;GPU;Video;Decoder;Encoder;
+StartupWMClass=vaapi-checker

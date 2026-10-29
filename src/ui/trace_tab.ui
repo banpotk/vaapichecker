@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TraceTab</class>
+ <widget class="QWidget" name="tracePage">
+  <layout class="QVBoxLayout" name="traceLayout" stretch="0,0,1,0">
+   <item>
+    <layout class="QHBoxLayout" name="traceTools" stretch="0,1,0,0,0">
+     <item>
+      <widget class="QComboBox" name="traceSource"/>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="traceSearch">
+       <property name="placeholderText"><string notr="true">Filter calls, messages or errors…</string></property>
+       <property name="clearButtonEnabled"><bool>true</bool></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="openTraceButton">
+       <property name="text"><string notr="true">Open trace…</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveTraceButton">
+       <property name="text"><string notr="true">Save log…</string></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="clearTraceButton">
+       <property name="text"><string notr="true">Clear</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="traceDescription">
+     <property name="text"><string notr="true">Events from device scans and video tests. Captured libva calls are added after the test finishes.</string></property>
+     <property name="wordWrap"><bool>true</bool></property>
+     <property name="textFormat"><enum>Qt::PlainText</enum></property>
+     <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QSplitter" name="traceSplitter">
+     <property name="orientation"><enum>Qt::Vertical</enum></property>
+     <widget class="QTableView" name="traceTable">
+      <property name="alternatingRowColors"><bool>true</bool></property>
+      <property name="showGrid"><bool>false</bool></property>
+      <property name="selectionBehavior"><enum>QAbstractItemView::SelectRows</enum></property>
+      <property name="selectionMode"><enum>QAbstractItemView::SingleSelection</enum></property>
+      <property name="editTriggers"><set>QAbstractItemView::NoEditTriggers</set></property>
+     </widget>
+     <widget class="QPlainTextEdit" name="traceDetails">
+      <property name="readOnly"><bool>true</bool></property>
+      <property name="maximumBlockCount"><number>10000</number></property>
+      <property name="placeholderText"><string notr="true">Select an event to see full details.</string></property>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="traceFooter" stretch="1,0">
+     <item>
+      <widget class="QLabel" name="eventCount">
+       <property name="text"><string notr="true">0 events · newest 5,000 retained</string></property>
+       <property name="wordWrap"><bool>true</bool></property>
+       <property name="textFormat"><enum>Qt::PlainText</enum></property>
+       <property name="textInteractionFlags"><set>Qt::TextSelectableByMouse</set></property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="followLatest">
+       <property name="text"><string notr="true">Follow latest</string></property>
+       <property name="checked"><bool>true</bool></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+</ui>
